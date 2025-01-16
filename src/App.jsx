@@ -1,0 +1,39 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Events from "./components/events/Events";
+import Team from "./components/team/Team";
+import Footer from "./components/Footer";
+
+import FormContainer from "./components/forms/FormContainer";
+
+function App() {
+  const [events, setEvents] = React.useState("contact");
+  return (
+    <Router>
+      <div className="min-h-screen bg-storm-darker">
+        <Navbar events={events} setEvents={setEvents} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Events />
+                <Team />
+              </>
+            }
+          />
+          <Route
+            path="/forms"
+            element={<FormContainer events={events} setEvents={setEvents} />}
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;
