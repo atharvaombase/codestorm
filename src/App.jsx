@@ -20,14 +20,22 @@ function App() {
             element={
               <>
                 <Hero />
-                <AdSense adSlot="ca-pub-3198706909969680" />
+                {/* <AdSense adSlot="ca-pub-3198706909969680" /> */}
                 <Events />
-                <AdSense adSlot="ca-pub-3198706909969680" />
+                {/* <AdSense adSlot="ca-pub-3198706909969680" /> */}
                 <Team />
               </>
             }
           />
-          <Route path="/team/events" element={<FormContainer />} />
+          <Route
+            path="/forms"
+            element={
+              <FormContainer
+                events={events}
+                setEvents={setEvents}
+              ></FormContainer>
+            }
+          />
         </Routes>
         {/* <AdSense adSlot="ca-pub-3198706909969680" /> */}
         <Footer />
