@@ -5,8 +5,8 @@ import Hero from "./components/Hero";
 import Events from "./components/events/Events";
 import Team from "./components/team/Team";
 import Footer from "./components/Footer";
-
 import FormContainer from "./components/forms/FormContainer";
+import AdSense from "./components/AdSense";
 
 function App() {
   const [events, setEvents] = React.useState("contact");
@@ -20,16 +20,16 @@ function App() {
             element={
               <>
                 <Hero />
+                <AdSense adSlot="ca-pub-3198706909969680" />
                 <Events />
+                <AdSense adSlot="ca-pub-3198706909969680" />
                 <Team />
               </>
             }
           />
-          <Route
-            path="/forms"
-            element={<FormContainer events={events} setEvents={setEvents} />}
-          />
+          <Route path="/team/events" element={<FormContainer />} />
         </Routes>
+        <adsense adSlot="ca-pub-3198706909969680" />
         <Footer />
       </div>
     </Router>
